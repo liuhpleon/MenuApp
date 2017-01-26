@@ -14,7 +14,33 @@
 <input type = 'text' size = '70' name = 'description' placeholder = '{{item.description}}'><br>
 
 <p>Course</p>
-<input type = 'text' size = '30' name = 'course' placeholder = '{{item.course}}'><br>
+	{% if item.course == 'Appetizer' %}
+		<dd><input type ='radio' name='course' value='Appetizer'checked >Appetizer</dd>
+	{%else%}
+	<dd><input type ='radio' name='course' value='Appetizer' >Appetizer</dd>
+    {% endif %}
+
+    {% if item.course == 'Entree' %}
+       <dd><input type ='radio' name='course' value='Entree' checked>Entree</dd>
+
+    {%else%}
+		<dd><input type ='radio' name='course' value='Entree'>Entree</dd>
+    {% endif %}
+
+	{% if item.course == 'Dessert'%}
+		<dd><input type ='radio' name='course' value='Dessert'checked >Dessert</dd>
+
+	{% else %}
+	   <dd><input type ='radio' name='course' value='Dessert'>Dessert</dd>
+
+	{% endif %}
+
+
+	{%if item.course =='Beverage'%}
+		<dd><input type ='radio' name='course' value='Beverage'checked >Beverage</dd>
+	{% else %}
+		<dd><input type ='radio' name='course' value='Beverage'>Beverage</dd>
+	{% endif %}
 
 <p>Price</p>
 <input type = 'text' size = '30' name = 'price' placeholder = '{{item.price}}'><br>
