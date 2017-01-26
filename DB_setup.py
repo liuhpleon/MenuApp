@@ -19,6 +19,15 @@ class Menu(base):
     price= Column(String(10))
     restaurant_id = Column(Integer,ForeignKey('restaurant.id'))
     restaurant = relationship(Restaurant)
+    @property
+    def transfer(self):
+        return{
+               'name':self.name,
+               'course':self.course,
+               'price':self.price,
+               'description':self.description,
+               'id':self.id,
+        }
     
 engine = create_engine('sqlite:///restaurant_menu.db')
 base.metadata.create_all(engine)

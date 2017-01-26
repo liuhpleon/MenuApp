@@ -1,5 +1,7 @@
 <html>
-
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
 <body>
 
 
@@ -8,10 +10,7 @@
 
 <div>
 
-<h1>{{restaurant.name}}</h1>
-
-
-<a href='{{url_for('restaurant_Menu', restaurant_id = restaurant.id) }}'>link</a>
+<a href='{{url_for('restaurant_Menu', restaurant_id = restaurant.id) }}'><h1>{{restaurant.name}}</h1></a>
 
 </br>
 
